@@ -1,0 +1,40 @@
+
+
+<h1>Equipos</h1>
+
+
+<div class="container">
+
+    <button class="btn btn-success" routerLink="/add-product">Agregar</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Logo</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of listProduct">
+            <td scope="row">{{product.id_equipo}}</td>
+            <td>{{product.nombre}}</td>
+            <td>
+                <img src="{{product.logo}}" alt="" width="50" height="50">
+            </td>
+            <td>
+                    <button type="button" (click)="modificar(product.id_equipo)" class="btn btn-primary">Ediar</button>
+            </td>
+            <td>
+                <button type="button" (click)="borrar(product.id_equipo)" class="btn btn-danger">Borrar</button>
+            </td>
+
+        </tr>
+      
+    </tbody>
+</table>
+
+
+</div>

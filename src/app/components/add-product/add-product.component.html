@@ -1,0 +1,35 @@
+<div class="container">
+    
+<div class="row">
+  <div class="col-sm-6">
+      <form>
+          <div class="mt-3">
+            <label class="form-label">Nombre del producto</label>
+                    <input [(ngModel)]="equipoForm.nombre" type="text" name="nombre" id="" class="form-control">
+          </div>
+
+          <div class="mt-3">
+            <label class="form-label">Logo</label>
+            <input [(ngModel)]="equipoForm.logo" type="text" name="logo" id="" class="form-control">
+          </div>
+<br>  
+          <button (click)="agregarProducto()" class="btn btn-primary">Agregar</button>
+
+
+      </form>
+
+  
+    </div>
+
+    <div class="col sm-6">
+        <img src="{{equipoForm.logo}}" width="100" height="100">
+    </div>    
+
+    <div class="col sm-6">
+      <label class="form-label"> {{equipoForm.nombre}}</label>
+       
+    </div>
+</div>
+  
+    
+</div>

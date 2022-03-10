@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -66,7 +67,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
+          "options": {
+            "browserTarget": "testAngularMysqlCRUD:build",  
+            "proxyConfig": "proxy.config.json"
+          },
+          "configurations": {   
             "production": {
               "browserTarget": "testAngularMysqlCRUD:build:production"
             },
@@ -77,14 +82,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "testAngularMysqlCRUD:build"
-          }
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+          
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
